@@ -1,5 +1,3 @@
-LabClass co452Lab = new LabClass(3);
-Student veena = new Student("Veena Patel", "20388712");
-Student gita = new Student("Gita Ralhan", "20844312");
-Student tim = new Student("Tim Lee", "20199812");
-co452Lab.enrollStudent(gita);
+Jose, student ID:22019481, credits:0 course:G400/Computing
+Jose, student ID:22019481, credits:20 course:G400/Computing
+Mario, student ID:22019481, credits:20 course:G400/Computing

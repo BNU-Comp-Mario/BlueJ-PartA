@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 /**
@@ -6,6 +7,8 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * 
+ * Modified by Jose Gomes - 06/10/2020
  */
 public class Student
 {
@@ -16,10 +19,11 @@ public class Student
     // the amount of credits for study taken so far
     private int credits;
     
+    private String course;
     /**
      * Create a new student with a given name and ID number.
      */
-    public Student(String fullName, String studentID)
+    public Student(String fullName, String studentID, String codeNumber, String title)
     {
         name = fullName;
         id = studentID;
@@ -77,11 +81,23 @@ public class Student
         return name.substring(0,4) + id.substring(0,3);
     }
     
+    
+    /*
+     * //Wasn't letting me print out if I used this method
+     * 
+    public String addCourse(String newCourse)
+    {
+     Course c = new Course();   
+    }
+    */
+
+    
     /**
-     * Print the student's name and ID number to the output terminal.
+     * Print the student's name, ID number, and course to the output terminal.
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        Course c = new Course();
+        System.out.println(name + ", student ID:" + id + ", credits:" + credits + " course:" + c.codeNumber + "/" + c.title);
     }
 }

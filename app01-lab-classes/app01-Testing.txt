@@ -1,3 +1,0 @@
-Jose, student ID:22019481, credits:0 course:G400/Computing
-Jose, student ID:22019481, credits:20 course:G400/Computing
-Mario, student ID:22019481, credits:20 course:G400/Computing

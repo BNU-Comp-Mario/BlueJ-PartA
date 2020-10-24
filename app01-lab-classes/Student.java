@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 /**
@@ -18,12 +17,13 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
+    // the students course status
+    private String studentCourse = "Not assigned.";
     
-    private String course;
     /**
      * Create a new student with a given name and ID number.
      */
-    public Student(String fullName, String studentID, String codeNumber, String title)
+    public Student(String fullName, String studentID)
     {
         name = fullName;
         id = studentID;
@@ -61,8 +61,7 @@ public class Student
     {
         credits += additionalPoints;
     }
-
-    
+ 
     /**
      * Return the number of credit points this student has accumulated.
      */
@@ -81,23 +80,23 @@ public class Student
         return name.substring(0,4) + id.substring(0,3);
     }
     
-    
-    /*
-     * //Wasn't letting me print out if I used this method
-     * 
-    public String addCourse(String newCourse)
-    {
-     Course c = new Course();   
-    }
-    */
-
-    
     /**
-     * Print the student's name, ID number, and course to the output terminal.
+     * Add the students course title and codenumber
+     * 
+     */
+    public void addCourse()
+    {
+     Course c= new Course();
+     studentCourse=c.courseTitle + c.courseId;
+     //just an alert to tell that the a course has been added to a student
+     System.out.println("The Student was Added to the course:"+studentCourse);
+    }
+     
+    /**
+     * Print the student's name, ID number and course to the output terminal.
      */
     public void print()
-    {
-        Course c = new Course();
-        System.out.println(name + ", student ID:" + id + ", credits:" + credits + " course:" + c.codeNumber + "/" + c.title);
+    {  
+        System.out.println(name + ", student ID:" + id + ", credits:" + credits + " course:" + studentCourse);
     }
 }

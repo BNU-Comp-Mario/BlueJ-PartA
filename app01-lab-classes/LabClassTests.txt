@@ -1,0 +1,8 @@
+Lab class Tuesday 29th September 2020
+Instructor: Nicholas Day   Room: G100
+Class list:
+Number of students: 0
+Jose, student ID:22019481, credits:0 course:Not assigned.
+The Student was Added to the course:ComputingG400
+Jose, student ID:22019481, credits:20 course:ComputingG400
+Gomes, student ID:22019481, credits:20 course:ComputingG400

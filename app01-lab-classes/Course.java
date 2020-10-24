@@ -8,8 +8,7 @@
  */
 public class Course
 {
-    // instance variables 
-        String codeNumber=new String("G400");
-        String title=new String("Computing");
-    
+    // the course references 
+        public String courseId = new String("G400");
+        public String courseTitle = new String("Computing");    
 }

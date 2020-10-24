@@ -6,18 +6,18 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
- * modified by Derek Peacock
- * dated 27/Sep/2020
+ * modified by Jose Gomes
+ * dated 20/10/2020
  */
 public class LabClass
 {
     private String instructor;
     private String room;
     private String timeAndDay;
-    
+ 
     private ArrayList<Student> students;
     private int capacity;
-    
+  
     /**
      * Create a LabClass with a maximum number of enrolments. All other details
      * are set to default values.

@@ -1,0 +1,29 @@
+All available tickets:
+#1:Destination:Aylesbury Cost:220£
+#2:Destination:Amersham Cost:300£
+#3:Destination:HighWycombe Cost:330£
+
+You must insert at least: 220 more cents.
+##################
+# The BlueJ Line
+# Ticket:Aylesbury
+# 220 cents
+# Date:2020-11-03T16:37:58.897283300
+##################
+
+You must insert at least: 300 more cents.
+##################
+# The BlueJ Line
+# Ticket:Amersham
+# 300 cents
+# Date:2020-11-03T16:38:41.825083800
+##################
+
+You must insert at least: 330 more cents.
+##################
+# The BlueJ Line
+# Ticket:High Wycombe
+# 330 cents
+# Date:2020-11-03T16:39:02.926878200
+##################
+

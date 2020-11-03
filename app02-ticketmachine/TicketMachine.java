@@ -1,3 +1,6 @@
+//needed libraries to use automatic date 
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime; 
 /**
  * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
@@ -7,37 +10,49 @@
  * if enough money has been input.
  * 
  * @author David J. Barnes and Michael Kölling
- * @version 2016.02.29
+ * @version 2020.11.1
  * 
- * Modified by Student Name
+ * Modified by Jose Gomes
+ * @version 03/11/2020
  */
 public class TicketMachine
 {
-    // The price of a ticket from this machine.
-    private int price;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-
+    // price
+    private int price;
+    // the following destination
+    private String printDestination;
+    
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss:SS");
+    LocalDateTime now = LocalDateTime.now();
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, String destination)
     {
-        price = cost;
         balance = 0;
         total = 0;
+        this.price = cost;
+        printDestination = destination;
+   
     }
-
+    
     /**
-     * @Return The price of a ticket.
+     * Display all available tickets
      */
-    public int getPrice()
+    public void printAllTickets()
     {
-        return price;
+    Ticket t = new Ticket();
+    System.out.println("All available tickets:");
+    System.out.println("#1:" + t.AYLESBURY_TICKET);
+    System.out.println("#2:" + t.AMERSHAM_TICKET);
+    System.out.println("#3:" + t.HIGHWYCOMBE_TICKET);
     }
-
+    
     /**
      * Return The amount of money already inserted for the
      * next ticket.
@@ -63,7 +78,7 @@ public class TicketMachine
                                amount);
         }
     }
-
+    
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
@@ -71,13 +86,15 @@ public class TicketMachine
      */
     public void printTicket()
     {
+        
         if(balance >= price) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# Ticket:" + printDestination);
+            System.out.println("# " + price + " cents");
+            System.out.println("# Date:" + now);
             System.out.println("##################");
             System.out.println();
 

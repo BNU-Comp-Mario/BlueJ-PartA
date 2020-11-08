@@ -1,0 +1,11 @@
+Mario Gomes, Student ID: 22019481, Credits: 0, Final Grade: 0
+Jose Gomes, Student ID: 22019481, Credits: 30, Final Grade: 0
+Jose Gomes 22019481
+The following modules were created:
+CO452/ProgrammingConcepts : ForEvaluation
+CO456/WebDevelopment : ForEvaluation
+CO450/ComputerArchitectures : ForEvaluation
+CO454/Digitech : ForEvaluation
+Final Grade: A
+Jose Gomes, Student ID: 22019481, Credits: 60, Final Grade: 85
+Final Grade: A

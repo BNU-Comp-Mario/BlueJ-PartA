@@ -1,11 +1,14 @@
 import java.util.*;
-
+import java.util.ArrayList;
 /**
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * 
+ * @modified Jose Gomes
+ * @version 06/11/2020
  */
 public class Student
 {
@@ -14,8 +17,13 @@ public class Student
     // the student ID
     private String id;
     // the amount of credits for study taken so far
-    private int credits;
-    
+    private int credits;   
+    public int programmingMark1;
+    public int webdevelopmentMark1;
+    public int computerMark1;
+    public int digitechMark1;
+    public int finalMark;
+    public String finalGrade;    
     /**
      * Create a new student with a given name and ID number.
      */
@@ -25,7 +33,78 @@ public class Student
         id = studentID;
         credits = 0;
     }
-
+      
+    /**
+     * Enroll a student on a course
+     */
+    public void enrollStudent()
+    {
+        Course c = new Course();
+        System.out.println(name + " " + id);
+        c.createModules();
+    }
+    
+    /**
+     * Award a mark to a module
+     */
+    public void programmingMark(int mark)
+    {
+        programmingMark1 = mark;
+    }
+    
+    /**
+     * Award a mark to a module
+     */
+    public void webdevelopmentMark(int mark)
+    {
+        webdevelopmentMark1 = mark;
+    }
+    
+    /**
+     * Award a mark to a module
+     */
+    public void computerMark(int mark)
+    {
+         computerMark1 = mark;
+    }
+    
+    /**
+     * Award a mark to a module
+     */
+    public void digitechMark(int mark)
+    {
+        digitechMark1 = mark;
+    }
+    
+    /**
+     * Calculate final grade 
+     */
+    public void finalGrade()
+    {
+     finalMark = ((programmingMark1 + webdevelopmentMark1 + computerMark1 + digitechMark1)/4);
+     
+     if(finalMark <= 39)
+     {
+         System.out.println("Final Grade: F");
+        }
+        else if(finalMark >= 40 && finalMark <= 49)
+        {
+        System.out.println("Final Grade: D");
+    }
+        else if(finalMark >= 50 && finalMark <= 59)
+        {
+        System.out.println("Final Grade: C");
+        }
+        else if(finalMark >= 60 && finalMark <= 69)
+        {
+        System.out.println("Final Grade: B");
+        }
+        else if(finalMark >= 70 && finalMark <= 100)
+        {
+        System.out.println("Final Grade: A");
+        }
+    }
+       
     /**
      * Return the full name of this student.
      */
@@ -57,7 +136,6 @@ public class Student
     {
         credits += additionalPoints;
     }
-
     
     /**
      * Return the number of credit points this student has accumulated.
@@ -82,6 +160,6 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", Student ID: " + id + ", Credits: " + credits + ", Final Grade: " + finalMark);
     }
 }

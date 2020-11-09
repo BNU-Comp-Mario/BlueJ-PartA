@@ -3,6 +3,9 @@
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
+ * 
+ * @modified (Jose Gomes)
+ * @version (09/11/2020)
  */
 public class Product
 {
@@ -11,7 +14,7 @@ public class Product
     // The name of this product.
     private String name;
     // The quantity of this product in stock.
-    private int quantity;
+    public int quantity;
 
     /**
      * Constructor for objects of class Product.

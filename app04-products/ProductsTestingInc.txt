@@ -1,0 +1,24 @@
+Low Stock Products:
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Huawei Mate 40 Pro stock level: 0
+105: Xiaomi Mi10 stock level: 0
+106: iPhone XS stock level: 0
+107: Samgung Galaxy Note20 stock level: 0
+108: iPhone 11 stock level: 0
+109: Huawei P40 Lite stock level: 0
+110: Nokia 3310 stock level: 0
+Product Delivered:101: Samsung Galaxy S20 stock level: 10
+Product Delivered:102: Apple iPhone 12 stock level: 10
+Product Delivered:103: Google Pixel 4A stock level: 10
+Product Delivered:104: Huawei Mate 40 Pro stock level: 10
+Product Delivered:105: Xiaomi Mi10 stock level: 10
+Low Stock Products:
+106: iPhone XS stock level: 0
+107: Samgung Galaxy Note20 stock level: 0
+108: iPhone 11 stock level: 0
+109: Huawei P40 Lite stock level: 0
+110: Nokia 3310 stock level: 0
+101: Samsung Galaxy S20 stock level: 10
+101: Samsung Galaxy S20 stock level: 4

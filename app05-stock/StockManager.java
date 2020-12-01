@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.*;
 
 /**
  * Manage the stock in a business.
@@ -10,9 +12,9 @@ import java.util.ArrayList;
 public class StockManager
 {
     // A list of the products.
-    private ArrayList<Product> stock;
+    public ArrayList<Product> stock;
     public int lowStock = 2; 
-    
+    private Product product;
     /**
      * Initialise the stock manager.
      */
@@ -36,8 +38,8 @@ public class StockManager
      * @param id The ID of the product.
      * @param amount The amount to increase the quantity by.
      */
-    public void delivery(int id, int amount)
-    {
+    public void delivery(int id, String name, int amount)
+    {   
         Product product = findProduct(id);
         if(product != null)
         {
@@ -53,13 +55,13 @@ public class StockManager
     /**
      * Rename a product
      */
-    public void renameProduct(int id)
+    public void renameProduct(String name,int id)
     {
         Product product = findProduct(id);
         
         if(product != null)
-        {
-            //rename
+        {         
+            product.setName(name);
         }
         else
         {
@@ -108,6 +110,7 @@ public class StockManager
         {
             if(product.getID() == id)
             {
+             System.out.println("Product: " + product);
              return product;    
             }
         }
@@ -183,4 +186,44 @@ public class StockManager
             System.out.println(product);
         }
     }
+    
+    /**
+     * Restock products with less than three units available
+     */
+    public void reStock(int id, int quantity)
+    {
+        Product product = findProduct(id);
+        if(product != null && product.quantity < 3)
+        {
+            product.increaseQuantity(quantity);
+            System.out.println("Product Delivered:" + product); 
+            printStock();
+        }
+        else if(product != null && product.quantity > 3)
+        {
+            System.out.println(product +" has plenty of stock");
+        }
+        else
+        {
+            System.out.println("PRODUCT ID:" + id + " NOT FOUND");
+        }    
+    }
+    
+    /**
+    * Remove one product by id 
+    */
+        public void removeProduct(int id)
+        {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            stock.remove(id-101);  //find another solution
+            System.out.println(product + " was removed"); 
+            printStock();
+        }
+        else
+        {
+            System.out.println("PRODUCT ID:" + id + " NOT FOUND");
+        } 
+        }
 }

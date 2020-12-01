@@ -25,16 +25,16 @@ public class StockDemo
     {
         this.manager = manager;
         randomGenerator = new Random();
-        manager.addProduct(new Product(101, "Samsung Galaxy S20"));
-        manager.addProduct(new Product(102, "Apple iPhone 12"));
-        manager.addProduct(new Product(103, "Google Pixel 4A"));
-        manager.addProduct(new Product(104, "Huawei Mate 40 Pro"));
-        manager.addProduct(new Product(105, "Xiaomi Mi10"));
-        manager.addProduct(new Product(106, "iPhone XS"));
-        manager.addProduct(new Product(107, "Samgung Galaxy Note20"));
-        manager.addProduct(new Product(108, "iPhone 11"));
-        manager.addProduct(new Product(109, "Huawei P40 Lite"));
-        manager.addProduct(new Product(110, "Nokia 3310"));
+        manager.addProduct(new Product(101, "Samsung Galaxy S20", 0));
+        manager.addProduct(new Product(102, "Apple iPhone 12", 1));
+        manager.addProduct(new Product(103, "Google Pixel 4A", 2));
+        manager.addProduct(new Product(104, "Huawei Mate 40 Pro", 3));
+        manager.addProduct(new Product(105, "Xiaomi Mi10", 4));
+        manager.addProduct(new Product(106, "iPhone XS", 5));
+        manager.addProduct(new Product(107, "Samgung Galaxy Note20", 6));
+        manager.addProduct(new Product(108, "iPhone 11", 7));
+        manager.addProduct(new Product(109, "Huawei P40 Lite", 8));
+        manager.addProduct(new Product(110, "Nokia 3310", 9));
     }
     
     /**
@@ -66,11 +66,11 @@ public class StockDemo
     {
         System.out.println("\nDelivering Products:\n");
         int quantity = 0;
-        
+        String name = "item";
         for(int id = 101; id < 110; id++)
         {
          quantity = randomGenerator.nextInt(8);
-         manager.delivery(id, quantity);
+         manager.delivery(id, name, quantity);
         }
     }
 

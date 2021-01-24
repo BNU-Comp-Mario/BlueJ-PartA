@@ -1,3 +1,4 @@
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -14,14 +15,17 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
  * 
- * Modified and extended by Your name
+ * @modified Jose Gomes
+ * @version 24/01/2021
  */
 
 public class Game 
 {
     private Parser parser;
     private Room currentRoom;
-        
+    Items i = new Items();
+    Player p = new Player();
+
     /**
      * Create the game and initialise its internal map.
      */
@@ -37,7 +41,7 @@ public class Game
     private void createRooms()
     {
         Room outside, theater, pub, lab, office, gym, nursery, reception; 
-      
+
         // create the rooms
         outside = new Room("outside the main entrance of the university");
         theater = new Room("in a lecture theater");
@@ -48,7 +52,7 @@ public class Game
         gym = new Room("in the gym");
         nursery = new Room("in the nursury");
         reception = new Room("in the reception"); //
-        
+
         // initialise room exits
         outside.setExit("east", theater);
         outside.setExit("south", lab);
@@ -64,12 +68,12 @@ public class Game
 
         office.setExit("west", lab);
         office.setExit("south", reception);
-        
+
         reception.setExit("north", office);
-        
+
         gym.setExit("south", theater);
         gym.setExit("east", nursery);
-        
+
         nursery.setExit("west", gym);
 
         currentRoom = outside;  // start game outside
@@ -84,16 +88,33 @@ public class Game
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
-                
+
         boolean finished = false;
-        
+
         while (! finished) 
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
+
+            if(p.energy == 0)
+                finished = true;
+            else if(currentRoom.getShortDescription() == "outside the main entrance of the university" && i.item1 == true && i.item2 == true)
+                finished = true;
         }
-        
-        System.out.println("Thank you for playing.  Good bye.");
+
+        //game ending decision (victory, defeat, quit)
+        if(p.energy == 0)
+        {    
+            System.out.println("You look exhausted, can't keep going like that! You lost...");
+        }
+        else if(currentRoom.getShortDescription() == "outside the main entrance of the university" && i.item1 == true && i.item2 == true)
+        {  
+            System.out.println("Congratulations you won!");
+        }
+        else
+        {
+            System.out.println("Thank you for playing.  Good bye.");
+        }
     }
 
     /**
@@ -123,33 +144,37 @@ public class Game
         switch (commandWord) 
         {
             case UNKNOWN:
-                System.out.println("I don't know what you mean...");
-                break;
+            System.out.println("I don't know what you mean...");
+            break;
 
             case HELP:
-                printHelp();
-                break;
+            printHelp();
+            break;
 
             case GO:
-                goRoom(command);
-                break;
-                
-                //my commands except QUIT
+            goRoom(command);
+            break;
+
+            //my commands except QUIT
             case PICK:
-                System.out.println("You picked a knife");
-                break;
-                
+            pickItem();
+            break;
+            //drink the energetic drink
+            case DRINK:
+            drink();
+            break;
+            //show inventory
             case SHOW:
-                System.out.println("Inventory");
-                break;
-                
+            showInventory();
+            break;
+            //show objective
             case GOAL:
-                System.out.println("You still have to pick up 3 more items");
-                break;
-                
+            remindGoal();
+            break;
+
             case QUIT:
-                wantToQuit = quit(command);
-                break;
+            wantToQuit = quit(command);
+            break;
         }
         return wantToQuit;
     }
@@ -192,8 +217,116 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
+            //remove energy from the player everytime he switches rooms
+            p.energy -= 10;
+            System.out.println("Energy: " + p.energy);
+
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+        }
+    }
+
+    /** 
+     * Try to pick up an item in a room, if theres none print an error message.
+     */
+    private void pickItem()
+    {     
+        if(currentRoom.getShortDescription() == "in the campus pub" && i.picked3 == false)
+        {    
+            i.item3 = true;
+            i.picked3 = true;
+            System.out.println("You picked an energetic drink");
+        }
+        else if(currentRoom.getShortDescription() == "in the reception" && i.picked2 == false)
+        {
+            i.item2 = true;
+            i.picked2 = true;
+            System.out.println("You picked a flashlight");
+        }
+        else if(currentRoom.getShortDescription() == "in the nursury" && i.picked1 == false)
+        {
+            i.item1 = true;
+            i.picked1 = true;
+            System.out.println("You picked a knife");
+        }
+        else
+            System.out.println("There is no items in the room!");
+    }
+
+    /** 
+     * Display player's inventory.
+     */
+    private void showInventory()
+    {
+        System.out.println("--------Inventory--------");
+        if(i.item1 == true && i.item2 == false && i.item3 == false)
+        {
+            System.out.println("(X) Knife");
+        }
+        else if(i.item2 == true && i.item1 == false && i.item3 == false)
+        {
+            System.out.println("(X) Flashlight");
+        }
+        else if(i.item3 == true && i.item2 == false && i.item1 == false)
+        {
+            System.out.println("(X) Energetic Drink");
+        }
+        else if(i.item1 && i.item2 == true && i.item3 == false)
+        {
+            System.out.println("(X) Knife");
+            System.out.println("(X) Flashlight");
+        }
+        else if(i.item2 && i.item3 == true && i.item1 == false)
+        {
+            System.out.println("(X) Flashlight");
+            System.out.println("(X) Energetic Drink");
+        }
+        else if(i.item1 && i.item3 == true && i.item2 == false)
+        {
+            System.out.println("(X) Knife");
+            System.out.println("(X) Energetic Drink");
+        }
+        else if(i.item1 == true && i.item2 == true && i.item3 == true)
+        {
+            System.out.println("(X) Knife");
+            System.out.println("(X) Flashlight");
+            System.out.println("(X) Energetic Drink");
+            System.out.println("You have every item. Run outside!");
+        }
+        else
+        {
+            System.out.println("You dont have any items");
+        }
+        System.out.println("-------------------------");
+    }
+
+    /** 
+     * Remind the player of his objective.
+     */
+    private void remindGoal()
+    {
+        System.out.println("Pick up all three items and get back outside!");
+    }
+
+    /** 
+     * Boost the players energy by 50.
+     */
+    private void drink()
+    {      
+        if(i.item3 == true && i.used == false)
+        {
+            p.energy += 50;
+            i.item3 = false;
+            i.used = true;
+            System.out.println("Energy: " + p.energy);
+        }
+        else if(i.used == true && i.item3 == false)                           
+        {
+            System.out.println("You already drank one energetic drink!");    
+        }
+        else if(i.item3 == false && i.used == false)
+        {
+            System.out.println("You do not have any drinks!");
         }
     }
 

@@ -1,0 +1,160 @@
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 90
+You are in the campus pub.
+Exits: east
+> drink
+You do not have any drinks!
+> pick
+You picked an energetic drink
+> pick
+There is no items in the room!
+> go east
+Energy: 80
+You are outside the main entrance of the university.
+Exits: east south west
+> go east
+Energy: 70
+You are in a lecture theater.
+Exits: north west
+> go north
+Energy: 60
+You are in the gym.
+Exits: east south
+> go east
+Energy: 50
+You are in the nursury.
+Exits: west
+> show
+--------Inventory--------
+(X) Energetic Drink
+-------------------------
+> pick
+You picked a knife
+> show
+--------Inventory--------
+(X) Knife
+(X) Energetic Drink
+-------------------------
+> pick
+There is no items in the room!
+> go west
+Energy: 40
+You are in the gym.
+Exits: east south
+> go south
+Energy: 30
+You are in a lecture theater.
+Exits: north west
+> go west
+Energy: 20
+You are outside the main entrance of the university.
+Exits: east south west
+> go south
+Energy: 10
+You are in a computing lab.
+Exits: east north
+> drink
+Energy: 60
+> show
+--------Inventory--------
+(X) Knife
+-------------------------
+> drink
+You already drank one energetic drink!
+> go east
+Energy: 50
+You are in the computing admin office.
+Exits: south west
+> go south
+Energy: 40
+You are in the reception.
+Exits: north
+> pick
+You picked a flashlight
+> go north
+Energy: 30
+You are in the computing admin office.
+Exits: south west
+> go west
+Energy: 20
+You are in a computing lab.
+Exits: east north
+> go north
+Energy: 10
+You are outside the main entrance of the university.
+Exits: east south west
+Congratulations you won!
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 90
+You are in the campus pub.
+Exits: east
+> go east
+Energy: 80
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 70
+You are in the campus pub.
+Exits: east
+> go east
+Energy: 60
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 50
+You are in the campus pub.
+Exits: east
+> go east
+Energy: 40
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 30
+You are in the campus pub.
+Exits: east
+> go east
+Energy: 20
+You are outside the main entrance of the university.
+Exits: east south west
+> go west
+Energy: 10
+You are in the campus pub.
+Exits: east
+> go east
+Energy: 0
+You look exhausted, can't keep going like that! You lost...
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+You are outside the main entrance of the university.
+Exits: east south west
+> help
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+help  goal  pick  go  show  quit  drink  
+> show
+--------Inventory--------
+You dont have any items
+-------------------------
+> goal
+Pick up all three items and get back outside!
+> quit
+Thank you for playing.  Good bye.

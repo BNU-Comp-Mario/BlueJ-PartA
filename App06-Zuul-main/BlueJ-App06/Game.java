@@ -40,26 +40,26 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office, gym, nursery, reception; 
+        Room outside, theatre, pub, lab, office, gym, nursery, reception; 
 
         // create the rooms
         outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
+        theatre = new Room("in a lecture theatre");
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
         //new rooms
         gym = new Room("in the gym");
-        nursery = new Room("in the nursury");
+        nursery = new Room("in the nursery");
         reception = new Room("in the reception"); //
 
         // initialise room exits
-        outside.setExit("east", theater);
+        outside.setExit("east", theatre);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
 
-        theater.setExit("west", outside);
-        theater.setExit("north", gym);
+        theatre.setExit("west", outside);
+        theatre.setExit("north", gym);
 
         pub.setExit("east", outside);
 
@@ -71,7 +71,7 @@ public class Game
 
         reception.setExit("north", office);
 
-        gym.setExit("south", theater);
+        gym.setExit("south", theatre);
         gym.setExit("east", nursery);
 
         nursery.setExit("west", gym);

@@ -243,14 +243,14 @@ public class Game
             i.picked2 = true;
             System.out.println("You picked a flashlight");
         }
-        else if(currentRoom.getShortDescription() == "in the nursury" && i.picked1 == false)
+        else if(currentRoom.getShortDescription() == "in the nursery" && i.picked1 == false)
         {
             i.item1 = true;
             i.picked1 = true;
             System.out.println("You picked a knife");
         }
         else
-            System.out.println("There is no items in the room!");
+            System.out.println("There are no items in the room!");
     }
 
     /** 

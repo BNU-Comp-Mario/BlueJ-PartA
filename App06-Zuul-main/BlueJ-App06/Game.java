@@ -305,7 +305,7 @@ public class Game
      */
     private void remindGoal()
     {
-        System.out.println("Pick up all three items and get back outside!");
+        System.out.println("Pick up the knife and the flashlight and get back outside!");
     }
 
     /** 
